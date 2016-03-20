@@ -1,0 +1,13 @@
+<h2>English Books with price below 30.00 grouped by authors:</h2>
+<ul>
+    {{#englishBooks}}
+    <li>Author: <span>{{author}}</span>
+    {{#books}}
+    <ul>
+        <li>Book: {{book}}, price: <span>{{price}}</span></li>
+    </ul>
+    {{/books}}
+    </li>
+    {{/englishBooks}}
+</ul>
+

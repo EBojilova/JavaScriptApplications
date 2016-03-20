@@ -1,0 +1,11 @@
+{{#results}}
+<div class="book" data-id="{{objectId}}">
+    <h2>Title: {{title}}</h2>
+    <p>Author: {{author}}</p>
+    <p>ISBN: {{isbn}}</p>
+    <button class="delete-btn" data-id="{{objectId}}">Delete book</button>
+    <button class="edit-btn" data-id="{{objectId}}">Edit book</button></div>
+{{/results}}
+{{^results}}
+<h2>No books</h2>
+{{/results}}

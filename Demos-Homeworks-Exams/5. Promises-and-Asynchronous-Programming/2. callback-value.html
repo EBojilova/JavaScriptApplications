@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+    <title>Callback value</title>
+</head>
+<body>
+    <button id = "get-report">Get Report</button>
+    <div id = "weather"
+         style = "font-size: 10em; color: lightblue;"></div>
+    <div id = "weather-report"
+         style = "font-size: 5em; color: green;"></div>
+
+    <script>
+        function getReport (success) {
+                setTimeout (function () {
+                        document.getElementById ("weather").innerHTML = "Cloudy";
+
+                        var getReportDateTime = new Date ();
+
+                        success (getReportDateTime);
+                }, 3000);
+        }
+
+        function reportWeather (time) {
+                document.getElementById ("weather-report").innerHTML = "Weather report at " + time.getHours () + ":" + time.getMinutes () + ":" + time.getSeconds ();
+        }
+
+        document.getElementById ("get-report").onclick = function () {
+                getReport (function (time) {
+                        reportWeather (time);
+                });
+        }
+    </script>
+</body>
+</html>

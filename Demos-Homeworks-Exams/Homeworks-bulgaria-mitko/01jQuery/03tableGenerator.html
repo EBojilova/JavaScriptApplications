@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Problem 3.	Table Generator</title>
+</head>
+<style type="text/css">
+	table {
+		border: 1px solid #666;   
+		width: 100%;
+	}
+
+	th {
+		background: #f8f8f8; 
+		font-weight: bold;    
+	    padding: 2px;
+	}
+</style>
+<body>
+	<h1>Automated generator for tables using json file</h1>
+	<table id="personDataTable">
+	    <tr>
+	        <th>Manufacturer</th>
+	        <th>Model</th>
+	        <th>Year</th>
+	        <th>Price</th>
+	        <th>Class</th>
+	    </tr>
+	</table>
+	<p><em>HINT: You must have a running server in order this website to show correct as it is making an ajax call and without a running server it will not work.</em></p>
+	<script type="text/javascript" src="libs/jquery.min.js"></script>
+	<script type="text/javascript" src="03tableGenerator.js"></script>
+</body>
+</html>

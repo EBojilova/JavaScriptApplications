@@ -1,0 +1,60 @@
+﻿section {
+    width: 600px;
+    margin: 0 auto;
+}
+
+h2, h3 {
+    margin-bottom: 5px;
+    text-decoration: underline;
+}
+
+h2 {
+    cursor: pointer;
+}
+
+button {
+    width: 70px;
+    border: none;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.country {
+    background-color: #417A98;
+    color: white;
+}
+
+.town {
+    background-color: #7BA60D;
+    color: white;
+}
+
+.confirm {
+    background-color: #FF7800;
+    color: white;
+}
+
+#add-country {
+    width: 100px;
+    background-color: #417A98;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.button-container {
+    display: inline-block;
+    float: right;
+}
+
+li:after {
+    content:'';
+    display:block;
+    clear: both;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Problem 2.	Background Color Switch</title>
+</head>
+<style type="text/css">
+	.left {
+		float: left;
+	}
+	.right {
+		float: left;
+	}
+	.bird {
+		background-color: #0080ff;
+	}
+</style>
+<body>
+	<h1>Enter new color and press Paint to change the color</h1>
+	<div class="left">
+		<label for="class">Class: </label>
+		<input type="text" id="class" placeholder="bird OR otherBird" value="bird"></input> <br>
+		<label for="color">Color:</label>
+		<input type="color" id="color" value="#0080ff"></input> <br>
+		<button>Paint</button>
+	</div>
+	<div class="right">
+		<ul>
+		    <li class="bird">Hummingbird</li>
+		    <li class="bird">Nightingale</li>
+		    <li class="otherBird">Lizard</li>
+		    <li class="bird">Eagle</li>
+		    <li class="bird">Sparrow</li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="libs/jquery.min.js"></script>
+	<script type="text/javascript" src="02colorSwitch.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bookmarks</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<style type="text/css">
+	#wrapper {
+		border: 1px solid black;
+	}
+
+	.studentList {
+		border: 1px solid hotpink;
+		border-radius: 5px;
+		display: inline-block;
+		margin:  5px;
+		padding: 20px;
+	}
+</style>
+<body>
+	<div id="wrapper">
+		<div id="studentsContainer">
+			
+		</div>
+		<div>
+			<input type="text" id="studentName" placeholder="Name of the student" autofocus></input>
+			<input type="text" id="studentGrade" placeholder="Grade"></input>
+			<button id="addStudent">Add Student</button>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/libs/jquery.min.js"></script>
+	<script type="text/javascript" src="js/libs/q.js"></script>
+	<script type="text/javascript" src="js/libs/jquery.noty.packaged.min.js"></script>
+	<script type="text/javascript" src="js/requester.js"></script>
+	<script type="text/javascript" src="js/collectionRequester.js"></script>
+	<script type="text/javascript" src="js/userRequester.js"></script>
+	<script type="text/javascript" src="js/students-view-model.js"></script>
+</body>
+</html>

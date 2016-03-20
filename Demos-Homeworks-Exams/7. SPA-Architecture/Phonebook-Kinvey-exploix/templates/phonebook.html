@@ -1,0 +1,20 @@
+<!-- Phonebook screen -->
+<table id="phones">
+    <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Action</th>
+    </tr>
+    {{#results}}
+    <tr data-id="{{_id}}">
+        <td>{{name}}</td>
+        <td>{{phoneNumber}}</td>
+        <td>
+            <a href="#/phones/edit/id={{_id}}&person={{name}}&number={{phoneNumber}}" class="link">Edit</a>
+            <a href="#/phones/delete/id={{_id}}&person={{name}}&number={{phoneNumber}}" class="link">Delete</a>
+        </td>
+    </tr>
+    {{/results}}
+</table>
+<p><a href="#/phones/add/" class="button">Add Phone</a></p>
+

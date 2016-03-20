@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Office notes</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/libs/jquery.min.js"></script>
+    <script type="text/javascript" src="js/libs/jquery.noty.packaged.js"></script>
+    <script type="text/javascript" src="js/libs/jquery.simplePagination.js"></script>
+    <script type="text/javascript" src="js/libs/mustache.min.js"></script>
+    <script type="text/javascript" src="js/libs/q.js"></script>
+    <script type="text/javascript" src="js/libs/sammy.js"></script>
+
+    <script type="text/javascript" src="js/extensions/noty.js"></script>
+</head>
+<body>
+<header><h1>Office notes</h1></header>
+
+<section id="wrapper">
+    <nav id="menu">
+        <h2 id="welcomeMenu">Welcome, someone</h2>
+        <ul>
+            <li><a href="#/home">Home</a></li>
+            <li><a href="#/office">Office notes</a></li>
+            <li><a href="#/myNotes">My notes</a></li>
+            <li><a href="#/addNote">Add note</a></li>
+            <li><a href="#/logout" id="logout">Logout</a></li>
+        </ul>
+    </nav>
+	
+    <section id="container">
+    </section>
+</section>
+
+<footer>&copy; 2015 by SoftUni Foundation, No Rights Reserved</footer>
+
+<script type="text/javascript" src="js/models/headers.js"></script>
+<script type="text/javascript" src="js/models/requester.js"></script>
+<script type="text/javascript" src="js/models/userModel.js"></script>
+<script type="text/javascript" src="js/models/noteModel.js"></script>
+<script type="text/javascript" src="js/models/model.js"></script>
+
+<script type="text/javascript" src="js/views/guestView.js"></script>
+<script type="text/javascript" src="js/views/registerView.js"></script>
+<script type="text/javascript" src="js/views/loginView.js"></script>
+<script type="text/javascript" src="js/views/homeView.js"></script>
+<script type="text/javascript" src="js/views/addNoteView.js"></script>
+<script type="text/javascript" src="js/views/editNoteView.js"></script>
+<script type="text/javascript" src="js/views/deleteNoteView.js"></script>
+<script type="text/javascript" src="js/views/currentUserNotesView.js"></script>
+<script type="text/javascript" src="js/views/officeNotesView.js"></script>
+
+<script type="text/javascript" src="js/controllers/controller.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+
+</body>
+
+</html>

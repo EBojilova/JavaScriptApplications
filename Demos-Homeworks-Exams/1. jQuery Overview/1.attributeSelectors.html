@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+  <meta charset = "UTF-8">
+  <title>Attribute Selectors</title>
+   <script src = "https://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+  <a href="index.html" hreflang="en">Home</a>
+  <a href="about.html" hreflang="UK-en">About</a>
+  <a href="contacts.html" hreflang="bg">Contacts</a>
+</body>
+<script>
+  //contains
+  $('a[hreflang*="en"]').css('color', 'red');
+  //starts with
+  $('a[hreflang^="en"]').css('color', 'green');
+</script>
+</html>

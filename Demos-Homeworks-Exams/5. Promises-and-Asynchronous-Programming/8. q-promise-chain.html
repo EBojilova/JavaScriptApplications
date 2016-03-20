@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+    <title>Q promise chain</title>
+    <script src = "http://cdnjs.cloudflare.com/ajax/libs/q.js/0.9.2/q.js"></script>
+</head>
+<body>
+    <script>
+        function powerPromise (number, power) {
+                var deferred = Q.defer ();
+                // za da vlezne v rejecta, triabva da e napisan predi resolve
+                if (isNaN (number) || isNaN (power)) {
+                        deferred.reject ('Number and power parameters should be a number!');
+                }
+                deferred.resolve (Math.pow (number, power));
+
+                return deferred.promise;
+        }
+
+        powerPromise (2, 3)
+        .then (function (result) {
+                // ako go razkomentirame ste izpritira na consolata saobstenieto ot sledvastia then ot error
+                //throw { message: "unknown error" };
+                return powerPromise (result, 2);
+        }, function (error) {
+                console.log (error);
+        })
+        .then (function (result) {
+                console.log (result);
+        }, function (error) {
+                console.error ("Known exception: " + error.message);
+        });
+
+    </script>
+</body>
+</html>

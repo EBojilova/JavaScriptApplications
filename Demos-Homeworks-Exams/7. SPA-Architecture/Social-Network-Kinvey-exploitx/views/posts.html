@@ -1,0 +1,18 @@
+<!-- posts page -->
+{{#posts}}
+<article class="post well">
+    <header class="post-header">
+        <div class="post-image">
+            <img class="mini-thumbnail" src="{{createdBy._obj.picture}}" />
+        </div>
+        <div class="post-info">
+            <p class="profile-link"><strong>{{createdBy._obj.username}}</strong> made a post</p>
+            <p>on <time>{{postDate}}</time></p>
+        </div>
+    </header>
+    <section class="post-content">
+        <p>{{content}}</p>
+    </section>
+</article>
+{{/posts}}
+<!-- end of posts page -->

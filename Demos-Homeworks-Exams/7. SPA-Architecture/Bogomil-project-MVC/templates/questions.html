@@ -1,0 +1,11 @@
+<ul>
+    {{#questions}}
+        <li data-id="{{_id}}">
+            {{title}}
+            <button class="getAnswers" value="Get Answers">Get Answers</button>
+            <button class="addAnswer" value="Add Answer">Add Answer</button>
+            <div class="answers"></div>
+        </li>
+    {{/questions}}
+</ul>
+<a href="#/logout"><button>Logout</button></a>

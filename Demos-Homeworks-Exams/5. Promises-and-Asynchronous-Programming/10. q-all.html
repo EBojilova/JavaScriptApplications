@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+    <title>Q all function</title>
+    <script src = "http://cdnjs.cloudflare.com/ajax/libs/q.js/0.9.2/q.js"></script>
+</head>
+<body>
+    <script>
+
+        function productPromise (a, b) {
+                var d = Q.defer ();
+
+                d.resolve (a * b);
+
+                return d.promise;
+        }
+
+        function powerPromise (number, power) {
+                var deferred = Q.defer ();
+
+                deferred.resolve (Math.pow (number, power));
+
+                return deferred.promise;
+        }
+
+        Q.all ([productPromise (2, 3), powerPromise (3, 2)])
+         .spread (function (first, second) {
+                 console.log (first, second);
+         });
+
+        // gornoto savpada s dolnoto, no e dosta po-iasna gornata implementacia
+        productPromise (2, 3)
+        .then (function (product) {
+                powerPromise (3, 2)
+                .then (function (power) {
+                        console.log (product, power);
+                })
+        })
+    </script>
+</body>
+</html>

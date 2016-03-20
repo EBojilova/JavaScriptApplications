@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Problem 2.	Poll</title>
+</head>
+<body>
+	<h2>Please, take our poll</h2>
+	<h3>Registration closes in <span id="timer"></span> minutes!</h3>
+	<div id="container">
+		<form method="post">
+			<div><strong>Choose a name from the following:</strong></div>
+			<input type="radio" name="name" id="zeus" value="Zeus" required></input> <label for="zeus">Zeus</label>
+			<input type="radio" name="name" id="sven" value="Sven" required></input> <label for="sven">Sven</label>
+			<input type="radio" name="name" id="drow" value="Drow Ranger" required></input> <label for="drow">Drow Ranger</label>
+			<input type="radio" name="name" id="earthshaker" value="Earth Shaker" required></input> <label for="earthshaker">Earth Shaker</label> <br>
+			<div><strong>Choose an item from the following:</strong></div>
+			<input type="radio" name="item" id="tango" value="Tango" required></input> <label for="tango">Tango</label>
+			<input type="radio" name="item" id="shadowblade" value="Shadow Blade" required></input> <label for="shadowblade">Shadow Blade</label>
+			<input type="radio" name="item" id="bkb" value="Black King Bar" required></input> <label for="bkb">Black King Bar</label>
+			<input type="radio" name="item" id="mkb" value="Monkey King Bar" required></input> <label for="mkb">Monkey King Bar</label> <br>
+			<div><strong>Choose from the following roles:</strong></div>
+			<input type="radio" name="role" id="carry" value="Carry" required></input> <label for="carry">Carry</label>
+			<input type="radio" name="role" id="support" value="Support" required></input> <label for="support">Support</label>
+			<input type="radio" name="role" id="tank" value="Tank" required></input> <label for="tank">Tank</label>
+			<input type="radio" name="role" id="ganger" value="Ganger" required></input> <label for="ganger">Ganger</label> <br>
+			<div><strong>Choose from the following abilities:</strong></div>
+			<input type="radio" name="ability" id="forestarrow" value="Frost Arrows" required></input> <label for="forestarrow">Frost Arrows</label>
+			<input type="radio" name="ability" id="xmark" value="X Marks the Spot" required></input> <label for="xmark">X Marks the Spot</label>
+			<input type="radio" name="ability" id="detonate" value="Focused Detonate" required></input> <label for="detonate">Focused Detonate</label>
+			<input type="radio" name="ability" id="lastword" value="Last Word" required></input> <label for="lastword">Last Word</label> <br> <br>
+			<input type="submit" value="Submit"></input>
+		</form>
+		<div id="timeFinished"></div>
+	</div>
+
+	<script type="text/javascript" src="libs/jquery.min.js"></script>
+	<script type="text/javascript" src="02poll.js"></script>
+</body>
+</html>

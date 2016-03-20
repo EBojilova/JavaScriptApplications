@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Geography system</title>
+</head>
+<body>
+	<h2>Hello there, <span id="display"></span>! Welcome to our Geography website!</h2>
+
+	<h3>List of all countries added so far:</h3>
+	<div id="countries"></div>
+	<h3>Add new country:</h3>
+	<label for="country">Enter the name of the new country:</label> <input type="text" id="country" placeholder="Country" required autofocus></input><input type="submit" id="addCountry" value="Add"></input>
+
+	<hr>
+
+	<h3>List of all towns added so far:</h3>
+	<div id="towns"></div>
+	<h3>Add new town:</h3>
+	<label for="country">Enter the name of the new town:</label> <input type="text" id="town" placeholder="Town" required></input> <select id="chooseCountry" required></select> <input type="submit" id="addTown" value="Add"></input>
+
+	<script type="text/javascript" src="js/libs/jquery.min.js"></script>
+	<script type="text/javascript" src="js/libs/q.js"></script>
+	<script type="text/javascript" src="js/requester.js"></script>
+	<script type="text/javascript" src="js/collectionRequester.js"></script>
+	<script type="text/javascript" src="js/userRequester.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+	<title>Consuming remote data with JavaScript: Creating HTTP Requests with getJSON</title>
+	<style type = "text/css">
+		.info
+                {
+                        font-size   : 0.9em;
+                        font-style  : italic;
+                        border      : 1px solid orange;
+                        display     : block;
+                        padding     : 5px 15px;
+                        width       : 250px;
+                        margin      : 0 auto;
+                        text-indent : 0;
+                }
+	</style>
+	<script src = "https://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+	<div id = "http-response"></div>
+	<script>
+  	var url = 'https://baas.kinvey.com/appdata/kid_WkwKuJux1W/questions';
+        var username = 'Helen';
+        var password = '1234';
+        $.ajaxSetup ({
+                             beforeSend: function (xhr) {
+                                     //TODO:Bogomil napisa slednia kod- da podavam useSession, ne da go hardcodvam
+                                     var useSession = false;
+                                     if (!useSession) {
+                                             xhr.setRequestHeader ("Authorization", "Basic " + btoa (username + ":" + password));
+                                     }
+                                     else {
+                                             //http://devcenter.kinvey.com/rest/guides/security
+                                             xhr.setRequestHeader ("Authorization", "Kinvey " + sessionStorage['sessionAuth']);
+                                     }
+                             }
+                     });
+
+        $.getJSON (url, function (data) {
+                var i, question, len, $questionList;
+                $questionList = $ ('<ul />');
+                for (i = 0, len = data[0].results.length; i < len; i += 1) {
+                        question = data[0].results[i];
+                        $ ('<li />')
+                        .html (question.questionText)
+                        .appendTo ($questionList);
+                }
+                $ ("#http-response")
+                .html ($questionList);
+        });
+	</script>
+	<p class = 'info'>This web page should be run on a server (localhost or in WWW).</p>
+</body>
+</html>

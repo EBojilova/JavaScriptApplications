@@ -1,0 +1,15 @@
+<h2>Books grouped by language and sorted by author and if two books have the same author - by price:</h2>
+{{#booksByLanguage}}
+<ul>
+    <li>Language: <span>{{language}}</span>
+    {{#books}}
+    <ul>
+        <li>Book: {{book}}, author: {{author}}, price: {{price}}</li>
+    </ul>
+    {{/books}}
+    {{^books}}
+        <p>No {{language}} books</p>
+    {{/books}}
+    </li>
+</ul>
+{{/booksByLanguage}}

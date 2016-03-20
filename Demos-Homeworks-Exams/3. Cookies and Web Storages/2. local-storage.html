@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Local Storage Demo</title>
+</head>
+<body>
+	<div>
+		<input id = "key"
+                       type = "text"
+                       placeholder = "Insert key"/>
+		<input id = "value"
+                       type = "text"
+                       placeholder = "Insert value"/>
+		<button id = "put-btn">Put in local storage</button>
+		<button id = "get-btn">get from local storage</button>
+	</div>
+	<div id = "result">
+		Items:
+                <br/>
+	</div>
+	<script>
+		(function() {
+                        var result = document.getElementById('result');
+                        var putButton = document.getElementById('put-btn');
+                        putButton.addEventListener('click', function(e) {
+                                var keyText = document.getElementById('key').value;
+                                var valueText = document.getElementById('value').value;
+                                // loccalStorage predstavliava nesto kato asociativen masiv s kluch value, a ne
+                                // kato cookie samo string 'c1=cookie1; expires=Thu, 30 Apr 2013 21:44:00 UTC; path=/'
+                                localStorage.setItem(keyText, valueText);
+                                result.innerHTML += 'Item added: ' + keyText + ' => ' + valueText + '<br />';
+                        });
+
+                        var getButton = document.getElementById('get-btn');
+                        getButton.addEventListener('click', function(e) {
+                                var keyText = document.getElementById('key').value;
+
+                                result.innerHTML += keyText + ' => ' + localStorage.getItem(keyText) + '<br />';
+                        });
+                }())
+	</script>
+</body>
+</html>

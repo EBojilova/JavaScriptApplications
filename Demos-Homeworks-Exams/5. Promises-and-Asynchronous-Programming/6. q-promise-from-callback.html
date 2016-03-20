@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+    <title>Q promise from callback</title>
+
+    <script src = "http://cdnjs.cloudflare.com/ajax/libs/q.js/0.9.2/q.js"></script>
+</head>
+<body>
+    <button id = "get-report">Get Report</button>
+    <div id = "weather"
+         style = "font-size: 10em; color: lightblue;"></div>
+    <div id = "weather-report"
+         style = "font-size: 5em; color: green;"></div>
+
+    <script>
+        function getReport () {
+                var deferred = Q.defer ();
+
+                setTimeout (function () {
+                        //hardcodnali sme che niama greshka
+                        var error = false;
+                        if (error) {
+                                deferred.reject ("Lunch break!");
+                        }
+                        else {
+                                document.getElementById ("weather").innerHTML = "Cloudy";
+                                var currentTime = new Date ();
+                                deferred.resolve (currentTime);
+                        }
+                }, 3000);
+
+                return deferred.promise;
+        }
+
+        function reportWeather (time) {
+                document.getElementById ("weather-report").innerHTML = "Weather report at " + time.getHours () + ":" + time.getMinutes () + ":" + time.getSeconds ();
+        }
+
+        document.getElementById ("get-report").onclick = function () {
+                getReport ()
+                .then (reportWeather, function (error) {
+                        console.error (error);
+                });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<ul>
+    {{#books}}
+    <li data-id="{{bookId}}">{{title}}
+        <button type="button" class="addAuthor">Add author</button>
+        <div class="authors"></div>
+    </li>
+    {{/books}}
+</ul>
+<button id="addNewBook" type="button">Add new book</button>

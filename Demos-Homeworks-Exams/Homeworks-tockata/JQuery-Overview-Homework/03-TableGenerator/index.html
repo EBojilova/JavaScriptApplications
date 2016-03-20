@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Table generator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <style>
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: green;
+        }
+
+        th, td {
+            width: 70px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="json" value='[{"manufacturer":"BMW","model":"E92 320i","year":2011,"price":50000,"class":"Family"},
+        {"manufacturer":"Porsche","model":"Panamera","year":2012,"price":100000,"class":"Sport"},
+        {"manufacturer":"Peugeot","model":"305","year":1978,"price":1000,"class":"Family"}]' />
+    <button>Generate table</button>
+    <table></table>
+    <script type="text/javascript" src="tableGenerator.js"></script>
+</body>
+</html>

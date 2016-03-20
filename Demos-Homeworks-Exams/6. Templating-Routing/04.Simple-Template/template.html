@@ -1,0 +1,17 @@
+<h1>{{header}}</h1>
+
+<ol>
+{{#items}}
+        <li>
+                 {{#link}}<a href = "{{url}}">{{/link}}
+                 {{^link}}<p>{{/link}}
+                        <h4 {{#first}}style = "color:red" {{/first}}>{{name}}</h4>
+                        {{#cousin}}<h5>{{cousin.name}}</h5>{{/cousin}}
+                 {{#link}}</a>{{/link}}
+                 {{^link}}</p>{{/link}}
+        </li>
+{{/items}}
+</ol>
+{{#empty}}
+<div>Empty division</div>
+{{/empty}}

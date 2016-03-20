@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+    <title>Q error propagation and done</title>
+    <script src = "http://cdnjs.cloudflare.com/ajax/libs/q.js/0.9.2/q.js"></script>
+</head>
+<body>
+    <script>
+		function powerPromise (number, power) {
+                        var deferred = Q.defer ();
+                        deferred.notify ();
+                        //throw new Error('Error');
+                        if (number >= 0) {
+                                deferred.resolve (Math.pow (number, power));
+                        }
+                        else {
+                                deferred.reject ("The number must be positive");
+                        }
+
+                        //throw new Error ('Another one');
+                        return deferred.promise;
+                }
+
+                //NOTE: Some the demos are commented, in order to prevent crowding of the console. Uncomment the demo you want to see.
+
+                console.log ('Error propagating up to the first error handler');
+                powerPromise(-26, 2).then(function (result) {
+                    return Math.round(result);
+                }).then(function (result) {
+                    console.log(result);
+                }, function (error) {
+                    console.log(error);
+                });
+
+                console.log ('No error handler, but finished with done, logging the error as an exception');
+                powerPromise(-26, 3).then(function (result) {
+                    return Math.round(result);
+                }).then(function (result) {
+                    console.log(result);
+                }).done();
+
+                console.log ('Exception in one of the thens, calling the error handler in the next then')
+                powerPromise (-2, 3)
+                .then (function (result) {
+                        //throw { message: "error on purpose", name: "error" };
+                        return Math.round (result);
+                })
+                //.then (success, error, pending)
+                .then (function (result) {
+                        console.log (result);
+                })
+                .then (function (result) {
+                        console.log (result);
+                })
+                //ako i tuka niamame error handler ste si garmi tihichko i niama da se razbere
+                .then (undefined, function (error) {
+                        console.log (error);
+                })
+                //ako niamame nikade erro handler, no slojim done, vse pak greshkata ste se izpishe na konzolata
+                .done ();
+
+
+    </script>
+</body>
+</html>

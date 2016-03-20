@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Slide Show</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <style>
+        #slideShow, .slide {
+            position: absolute;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <button id="previous">Previous</button>
+    <div id="slideShow">
+        <div class="slide" id="firstSlide">
+            <img src="https://c402277.ssl.cf1.rackcdn.com/photos/2325/images/hero_small/mountains-hero.jpg?1345838509" />
+        </div>
+        <div class="slide" id="secondSlide">
+            <form method="post" action="#">
+                <label for="username">Login form:</label><br/>
+                <input type="text" placeholder="Username" id="username"/><br/>
+                <input type="password" placeholder="password" id="password"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+            <form method="post" action="#">
+                <label id="new-username">Register:</label><br />
+                <input type="text" placeholder="Username" id="new-username" /><br />
+                <input type="password" placeholder="password" id="new-password"/><br/>
+                <input type="password" placeholder="password" id="confirm-password" /><br />
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+        <div class="slide" id="thirdSlide">
+            <img src="http://1.bp.blogspot.com/-cNJcRwNLh7o/UGiooXrXUwI/AAAAAAAADDI/-RmUfMHk_vk/s640/mountains+and+clouds.jpg"/>
+        </div>
+    </div>
+    <button id="next">Next</button>
+</div>
+    <script type="text/javascript" src="slideShow.js"></script>
+</body>
+</html>

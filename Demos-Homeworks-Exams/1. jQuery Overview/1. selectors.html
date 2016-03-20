@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>jQuery: Selectors Demo</title>
+  <script src = "https://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+
+<body>  
+  <section class = "widget">
+    <h2>Cars</h2>
+    <ul>
+      <li>
+        <a href = "#"
+           id = "first"
+           data-class = "fast">BMW</a>
+      </li>
+      <li>
+        <a href = "#"
+           class = "selected-item"
+           data-class = "family">Audi</a>
+      </li>
+      <li>
+        <a href = "#"
+           data-class = "family">Mercedes-Benz</a>
+      </li>
+      <li>
+        <a href = "#"
+           data-class = "sport">Porsche</a>
+      </li>
+      <li>
+        <a href = "#"
+           data-class = "luxury">Aston Martin</a>
+      </li>
+      <li>
+        <a href = "#"
+           data-class = "fast">Trabant</a>
+      </li>
+    </ul>
+  </section>
+  
+  <script type = "text/javascript">
+    function logItems($items) {
+            for (var i = 0; i < $items.length; i++) {
+                    console.log('-' + $items[i].innerHTML);
+            }
+    }
+
+    var $tagItems = $("ul li a");
+    console.log('Elements with selector: "ul li a":');
+    logItems($tagItems);
+
+    var $classItems = $('.selected-item');
+    console.log('Elements with selector: ".selected-item":');
+    logItems($classItems);
+
+    var $idItems = $('#first, .selected-item');
+    console.log('Elements with selector: "#first, .selected-item":');
+    logItems($idItems);
+
+    //$('li:odd') // Odd <li>
+    var $evenItems = $('li:even a');
+    console.log('Elements with selector: "li:even a":');
+    logItems($evenItems);
+
+    var $itemsContainedY = $('a[data-class*="y"]');
+    console.log('Elements with selector: "a[data-class*="y"]":');
+    logItems($itemsContainedY);
+
+    var $itemsStartedWithFa = $('a[data-class^="fa"]');
+    console.log('Elements with selector: "a[data-class^="fa"]":');
+    logItems($itemsStartedWithFa);
+
+    //$('li:first-child') // Selets the first child of <li>
+    var $itemsliFirstChild= $('li:first-child');
+    console.log('Elements with selector: "li:first-child":');
+    logItems($itemsliFirstChild);
+
+    //$('li:first') // First <li>
+    var $itemsliFirst= $('li:first');
+    console.log('Elements with selector: "li:first":');
+    logItems($itemsliFirst);
+
+    //$('li:has(p)') // Selects all <li> holding <p> inside
+    var $itemsContainsGivenTag= $('li:has(p)');
+    console.log('Elements with selector: "li:has(p)":');
+    logItems($itemsContainsGivenTag);
+
+    //$('li:contains("Audi")') // Selects <li> holding given text
+    var $itemsContainsGivenText= $('li:contains("Audi")');
+    console.log('Elements with selector: "li:contains("Audi")":');
+    logItems($itemsContainsGivenText);
+
+    //$('li:eq(2)') // Selects the element at index 2
+    var $elementAtGivenIndex= $('li:eq(2)');
+    console.log('Elements with selector: "li:eq(2)":');
+    logItems($elementAtGivenIndex);
+
+    // $('li:not(:checked)') // Elements not matching the selector
+    var $items= $('li:not(:checked)');
+    console.log('Elements with selector: "li:not(:checked)":');
+    logItems($items);
+
+    $('ul') // Like: document.getElementsByTagName('ul');
+    //$('li').css('background', 'blue'); // Make all LIs blue;
+  </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+  <meta charset = "UTF-8">
+  <title>Get Set Cookie Test</title>
+</head>
+<body>
+<script src = "scripts/cookies.js"></script>
+    <script>
+        // website ste vaji samo 10 secundi
+        cookie.set("website", "softuni.bg", new Date(new Date().getTime() + 10000));
+        // author ste vaji 30 dni
+        cookie.set('author', 'Pesho Mashinata', 30);
+
+        console.log('Cookie "website": ' + cookie.get('website'));
+        console.log('Cookie "author": ' + cookie.get('author'));
+        console.log('Deleting cookie author..........');
+        cookie.delete('author');
+        console.log('Cookie "author": ' + cookie.get('author'));
+    </script>
+</body>
+</html>

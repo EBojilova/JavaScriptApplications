@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Book system</title>
+</head>
+<body>
+	<h2>Hello there, <span id="display"></span>! Welcome to our Bookshop website!</h2>
+
+	<h3>List of all books added so far:</h3>
+	<div id="books"></div>
+	<h3>Add a new book:</h3>
+	<label for="book">Enter the name of the new book:</label> <input type="text" id="book" placeholder="Book name" required autofocus></input><input type="submit" id="addBook" value="Add"></input>
+
+	<hr>
+
+	<h3>List of all tags added so far:</h3>
+	<div id="tags"></div>
+	<h3>Add new tag:</h3>
+	<label for="country">Enter the name of the new tag:</label> <input type="text" id="tag" placeholder="Tag name" required></input> <select id="chooseBook" required></select> <input type="submit" id="addTag" value="Add"></input>
+
+	<script type="text/javascript" src="js/libs/jquery.min.js"></script>
+	<script type="text/javascript" src="js/libs/q.js"></script>
+	<script type="text/javascript" src="js/libs/jquery.noty.packaged.min.js"></script>
+	<script type="text/javascript" src="js/requester.js"></script>
+	<script type="text/javascript" src="js/collectionRequester.js"></script>
+	<script type="text/javascript" src="js/userRequester.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

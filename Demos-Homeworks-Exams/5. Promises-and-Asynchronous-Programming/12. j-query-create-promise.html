@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+    <title>jQuery create promise</title>
+    <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+
+        function powerPromise (number, power) {
+                var d = $.Deferred ();
+
+                //throw
+                d.resolve (Math.pow (number, power));
+
+                return d.promise ();
+        }
+
+        powerPromise (4, 2)
+        .then (function (result) {
+                console.log (result);
+        })
+        .then (function () {
+                console.log ("last in chain");
+        }, function (error) {
+                console.log ('Grumna be maina, ' + error.message);
+        });
+        
+    </script>
+</body>
+</html>

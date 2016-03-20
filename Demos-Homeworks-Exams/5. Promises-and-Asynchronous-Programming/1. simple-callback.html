@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+    <title>Simple callback</title>
+</head>
+<body>
+    <button id = "weather-report">Get Report</button>
+    <div id = "weather"></div>
+
+    <script>
+        function getReport () {
+                document.getElementById ("weather").innerHTML = "<p style='font-size: 5em; color: black; margin: 0;'>Getting weather report...</p>";
+                setTimeout (function () {
+                        document.getElementById ("weather").innerHTML = "<p style='font-size: 15em; color: yellow; margin: 0'>Sunny</p>";
+                }, 3000);
+        }
+
+        document.getElementById ("weather-report").onclick = getReport
+    </script>
+</body>
+</html>
