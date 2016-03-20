@@ -29,9 +29,13 @@ app.lectureModel = (function () {
     };
 
     LectureModel.prototype.deleteLecture = function (lectureId) {
-        console.log(lectureId);
         var requestUrl = this.serviceUrl + lectureId;
         return this.requester.delete(requestUrl, true);
+    };
+
+    LectureModel.prototype.getLectureById = function (lectureId) {
+        var requestUrl = this.serviceUrl + lectureId;
+        return this.requester.get(requestUrl, true);
     };
 
     return {

@@ -42,7 +42,7 @@ app.lectureViews = (function () {
     function showLectures(selector, data) {
         $.get('templates/menu-home.html', function (templ) {
             $('#menu').html(templ);
-        })
+        });
         $.get('templates/calendar.html', function (templ) {
             var rendered = Mustache.render(templ, data);
             $(selector)
@@ -64,9 +64,10 @@ app.lectureViews = (function () {
                         text: 'Add Event',
                         click: function () {
                             //TODO: redirect to add event page
-                            $.sammy(function () {
-                                this.trigger('redirectUrl', {url: '#/calendar/add/'});
-                            });
+                             location.href = '#/calendar/add/';
+                            //$.sammy(function () {
+                            //    this.trigger('redirectUrl', {url: '#/calendar/add/'});
+                            //});
                         }
                     }
                 },
@@ -76,16 +77,22 @@ app.lectureViews = (function () {
                         $('#modal-body').html(rendered);
                         $('#editLecture').on('click', function () {
                             //TODO: redirect to edit event page
-                            //var foundLecture = findLecture.call(this, data);
+                            // moje i taka da se napishe za da se mahne zatamniavaneto na ekranite
+                            //$('#events-modal').on('hidden.bs.modal', function() {
+                            //    Sammy(function() {
+                            //        this.trigger('show-edit-lecture', lectureData);
+                            //    });
+                            //});
                             $.sammy(function () {
-                                this.trigger('show-edit-lecture', calEvent)
+                                this.trigger('redirectUrl', {url: '#/calendar/edit/'  + calEvent._id})
+                                //this.trigger('show-edit-lecture', calEvent)
                             })
                         });
                         $('#deleteLecture').on('click', function () {
                             //TODO: redirect to delete event page
                             $.sammy(function () {
-                                //var foundLecture = findLecture.call(this, data);
-                                this.trigger('show-delete-lecture', calEvent)
+                                //this.trigger('show-delete-lecture', calEvent)
+                                this.trigger('redirectUrl', {url: '#/calendar/delete/' + calEvent._id})
                             });
                         })
                     });
@@ -98,7 +105,7 @@ app.lectureViews = (function () {
 
 
     function showEditLecture(selector, data) {
-        $('.modal-backdrop').remove();
+        //$('.modal-backdrop').remove();
         $.get('templates/edit-lecture.html', function (templ) {
             var rendered = Mustache.render(templ, data);
             $(selector)
@@ -115,7 +122,7 @@ app.lectureViews = (function () {
     }
 
     function showDeleteLecture(selector, data) {
-        $('.modal-backdrop').remove();
+        //$('.modal-backdrop').remove();
         $.get('templates/delete-lecture.html', function (templ) {
             var rendered = Mustache.render(templ, data);
             $(selector).html(rendered);

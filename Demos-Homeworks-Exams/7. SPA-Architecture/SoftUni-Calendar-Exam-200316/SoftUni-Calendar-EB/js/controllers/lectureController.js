@@ -45,11 +45,12 @@ app.lectureController = (function () {
                 })
     };
 
-    LectureController.prototype.loadEditPage = function (selector, data) {
-        this._viewBag.showEditLecture(selector, data);
-        Sammy(function () {
-            this.trigger('redirectUrl', {url: '#/calendar/edit/' + data._id});
-        });
+    LectureController.prototype.loadEditPage = function (lectureId) {
+        var _this = this;
+        this._model.getLectureById(lectureId)
+            .then(function(success){
+                _this._viewBag.showEditLecture('#container', success);
+            });
     };
 
     LectureController.prototype.editLecture = function (data) {
@@ -65,11 +66,13 @@ app.lectureController = (function () {
                 })
     };
 
-    LectureController.prototype.loadDeletePage = function (selector, data) {
+    LectureController.prototype.loadDeletePage = function (lectureId) {
+        var _this = this;
+        this._model.getLectureById(lectureId)
+            .then(function(success){
+                _this._viewBag.showDeleteLecture('#container', success);
+            });
         this._viewBag.showDeleteLecture(selector, data);
-        Sammy(function () {
-            this.trigger('redirectUrl', {url: '#/calendar/delete/' + data._id});
-        });
     };
 
     LectureController.prototype.deleteLecture = function (data) {

@@ -63,14 +63,14 @@ var app = app || {};
             lectureController.loadAddPage(selector);
         });
 
-        this.get('#/calendar/edit/(.*)', function () {
+        this.get('#/calendar/delete/:lectureId', function () {
+            lectureController.loadDeletePage(this.params['lectureId']);
         });
 
-        this.get('#/calendar/delete/(.*)', function () {
+        this.get('#/calendar/edit/:lectureId', function () {
+            lectureController.loadEditPage(this.params['lectureId']);
         });
 
-        this.get('#/deleteLecture/', function () {
-        });
 
         // BINDING custom eventite, za da izbegnem Dependecy Injection na controlerite s viewtata
 
@@ -88,17 +88,19 @@ var app = app || {};
             lectureController.addLecture(data);
         });
 
-        this.bind('show-edit-lecture', function (e, data) {
-            lectureController.loadEditPage(selector, data);
-        });
+        //this.bind('show-edit-lecture', function (e, data) {
+        //    this.redirect('#/calendar/edit/' + data._id);
+        //    lectureController.loadEditPage(selector, data);
+        //});
 
         this.bind('edit-lecture', function (e, data) {
             lectureController.editLecture(data);
         });
 
-        this.bind('show-delete-lecture', function (e, data) {
-            lectureController.loadDeletePage(selector, data);
-        });
+        //this.bind('show-delete-lecture', function (e, data) {
+        //    this.redirect('#/calendar/delete/' + data._id);
+        //    lectureController.loadDeletePage(selector, data);
+        //});
 
         this.bind('delete-lecture', function (e, lectureId) {
             lectureController.deleteLecture(lectureId);
