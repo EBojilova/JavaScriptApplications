@@ -63,10 +63,10 @@ var app = app || {};
             lectureController.loadAddPage(selector);
         });
 
-        this.get('#//calendar/edit/(.*)', function () {
+        this.get('#/calendar/edit/(.*)', function () {
         });
 
-        this.get('#//calendar/delete/(.*)', function () {
+        this.get('#/calendar/delete/(.*)', function () {
         });
 
         this.get('#/deleteLecture/', function () {
